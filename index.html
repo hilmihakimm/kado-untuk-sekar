@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<meta name="description" content="Hadiah kecil yang dibuat dengan cinta, khusus untuk Sekar.">
+<title>Untuk Sekar, Sayang ♡</title>
+<style>
+:root {
+  --pink:#ffd6e7; --pink2:#ffb9d2; --rose:#e878a5;
+  --lav:#e6dcff; --cream:#fffaf2; --ink:#67445b;
+  --white:#fffdfd; --shadow:0 16px 45px #a95b8120;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink);
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 8% 10%,#ffe0ee 0,transparent 26rem),
+    radial-gradient(circle at 90% 25%,#e9e0ff 0,transparent 28rem),
+    linear-gradient(180deg,#fff8fb,#fffaf2 60%,#fff1f7);
+  overflow-x:hidden;
+}
+button{font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #bd6e9a;outline-offset:4px}
+#floaties{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.floaty{position:absolute;bottom:-50px;opacity:.8;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+.wrap{position:relative;z-index:1;width:min(760px,92%);margin:auto}
+.hero{text-align:center;padding:64px 0 38px;min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pill{display:inline-block;background:#fff9;border:1px solid #f5c8dc;border-radius:99px;padding:9px 15px;font-size:.78rem;letter-spacing:1.4px;color:#a65b80}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal}
+h1{font-size:clamp(2.7rem,9vw,5.6rem);line-height:1.04;margin:24px 0 16px;letter-spacing:-2px}
+h1 em{color:#df719f;font-weight:normal}
+.lead{max-width:510px;line-height:1.9;color:#8a6379;margin:0 auto 24px}
+button,.button{
+  display:inline-flex;justify-content:center;align-items:center;gap:8px;
+  border:0;border-radius:999px;padding:14px 21px;background:#e77ca5;color:white;
+  cursor:pointer;box-shadow:0 7px 18px #d66b962b;transition:transform .2s,filter .2s;text-decoration:none
+}
+button:hover,.button:hover{transform:translateY(-2px);filter:saturate(1.1)}
+.btn-soft{background:#fff;border:1px solid #f1c2d6;color:#a45c7d;box-shadow:none}
+.hero-art{font-size:clamp(3rem,11vw,5.5rem);margin:18px 0 6px;filter:drop-shadow(0 7px 8px #dc91b333);animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
+section{scroll-margin-top:25px;padding:24px 0 34px}
+.section-head{text-align:center;margin-bottom:22px}
+.eyebrow{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:#bc7294}
+h2{font-size:clamp(2rem,7vw,3rem);margin:10px 0}
+.section-desc{line-height:1.8;color:#95778a;max-width:520px;margin:0 auto}
+.card{background:#ffffffc9;border:1px solid #f4d9e5;border-radius:27px;padding:clamp(18px,5vw,30px);box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.photo-card{background:#fff;border-radius:19px;padding:9px;box-shadow:0 8px 22px #b7789214;transform:rotate(-1deg)}
+.photo-card:nth-child(even){transform:rotate(1deg)}
+.photo-placeholder{height:155px;border-radius:13px;background:linear-gradient(135deg,#ffe0ec,#e7dfff);display:flex;align-items:center;justify-content:center;font-size:2.8rem;overflow:hidden}
+.photo-placeholder img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-card p{text-align:center;font-family:Georgia,serif;font-size:.98rem;margin:11px 3px 5px}
+.hint{font-size:.8rem;line-height:1.6;color:#9b7c8f;text-align:center;margin:14px 0 0}
+.letter-box{background:#fffdf9;border:1px dashed #e9b4cb;border-radius:18px;padding:22px;line-height:1.95;white-space:pre-line}
+.hidden{display:none!important}
+.center{text-align:center}
+.music-row{display:flex;align-items:center;gap:15px;text-align:left}
+.music-disc{flex:0 0 65px;height:65px;border-radius:50%;background:linear-gradient(135deg,#ffc8df,#d8c9ff);display:grid;place-items:center;font-size:1.8rem}
+.music-copy{flex:1;min-width:0}
+.music-copy strong{display:block;margin-bottom:5px}
+.music-copy small{color:#9b7c8f;line-height:1.5}
+audio{width:100%;margin-top:18px}
+.quiz-q{font-size:1.1rem;line-height:1.6;margin:0 0 15px}
+.answers{display:grid;gap:10px}
+.answer{width:100%;background:#fff8fb;border:1px solid #f1cada;color:#80536b;box-shadow:none;border-radius:15px;text-align:left;justify-content:flex-start}
+.answer.selected{background:#fbe0ec;border-color:#df8db0}
+.answer:disabled{cursor:default;opacity:1}
+.feedback{min-height:28px;line-height:1.6;margin:15px 0;color:#a75e80}
+.progress{height:6px;background:#f7e1eb;border-radius:9px;overflow:hidden;margin:0 0 18px}
+.progress span{display:block;height:100%;width:0;background:#e77ca5;transition:width .3s}
+.final-card{text-align:center;overflow:hidden}
+.cake{font-size:5rem;animation:bob 2s ease-in-out infinite}
+.final-message{font-family:Georgia,serif;font-size:1.2rem;line-height:1.9}
+footer{text-align:center;padding:35px 0 45px;font-size:.8rem;color:#b1849c}
+footer b{color:#d56e9b}
+.spark{position:fixed;z-index:9;pointer-events:none;animation:pop 1.7s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--x),-80vh) rotate(300deg);opacity:0}}
+@media(max-width:460px){.grid{gap:9px}.photo-placeholder{height:125px}.photo-card{padding:7px}.photo-card p{font-size:.9rem}.music-row{align-items:flex-start}.hero{min-height:88vh;padding-top:45px}}
+</style>
+</head>
+<body>
+<div id="floaties" aria-hidden="true"></div>
+<main class="wrap">
+  <header class="hero">
+    <div class="pill">A LITTLE GIFT MADE WITH LOVE ♡</div>
+    <div class="hero-art" aria-hidden="true">🎀 🌷 💗</div>
+    <h1>Happy Birthday,<br><em>Sekar Sayang</em></h1>
+    <p class="lead">Aku punya sesuatu yang kecil, tapi dibuat dengan sepenuh hati khusus untuk kamu. Hari ini, dunia harus sedikit lebih manis karena kamu lahir. ♡</p>
+    <button onclick="openGift()">Buka hadiahmu, Sayang 💌</button>
+    <p class="hint">Psst... paling manis dibuka sampai akhir ✨</p>
+  </header>
+
+  <div id="giftContent" class="hidden">
+    <section id="memories">
+      <div class="section-head"><div class="eyebrow">chapter one · little moments</div><h2>Our little memories 📸</h2><p class="section-desc">Beberapa ruang kecil untuk kenangan kita. Ganti kotak-kotak ini dengan foto asli kalian agar terasa lebih personal.</p></div>
+      <div class="card">
+        <div class="grid">
+          <div class="photo-card"><div class="photo-placeholder"><img src="assets/foto/kenangan1.jpg" alt="Kenangan pertama" onerror="this.remove();this.parentElement.textContent='🌷'"></div><p>One of my favorite days</p></div>
+          <div class="photo-card"><div class="photo-placeholder"><img src="assets/foto/kenangan2.jpg" alt="Kenangan kedua" onerror="this.remove();this.parentElement.textContent='🧸'"></div><p>Little things, big feelings</p></div>
+          <div class="photo-card"><div class="photo-placeholder"><img src="assets/foto/kenangan3.jpg" alt="Kenangan ketiga" onerror="this.remove();this.parentElement.textContent='🌸'"></div><p>My favorite human</p></div>
+          <div class="photo-card"><div class="photo-placeholder"><img src="assets/foto/kenangan4.jpg" alt="Kenangan keempat" onerror="this.remove();this.parentElement.textContent='💗'"></div><p>More memories to come</p></div>
+        </div>
+        <p class="hint">Simpan fotomu dengan nama kenangan1.jpg sampai kenangan4.jpg di folder assets/foto.</p>
+      </div>
+    </section>
+
+    <section id="letterSection">
+      <div class="section-head"><div class="eyebrow">chapter two · from my heart</div><h2>A letter for you 💌</h2><p class="section-desc">Ada beberapa hal yang ingin aku bilang, bukan cuma hari ini.</p></div>
+      <div class="card">
+        <div class="center"><div style="font-size:3.2rem">✉️</div><button id="letterButton" onclick="showLetter()">Buka surat dari aku</button></div>
+        <div id="letter" class="letter-box hidden" style="margin-top:20px">Untuk Sekar Primadani Pangesti, Sayangku ♡
+
+Selamat ulang tahun, Sayang.
+
+Aku berharap di umur yang baru ini, kamu diberi banyak alasan untuk tersenyum, diberi kekuatan saat hari terasa berat, dan dipertemukan dengan hal-hal baik yang selama ini kamu doakan.
+
+Terima kasih sudah menjadi bagian dari hidupku. Aku mungkin belum selalu bisa mengungkapkan semuanya dengan sempurna, tapi aku ingin terus belajar memahami kamu, mendengarkan ceritamu, dan mendukung mimpi-mimpimu.
+
+Kamu tidak harus selalu kuat, tidak harus selalu baik-baik saja. Semoga kamu selalu ingat bahwa kamu berharga, kamu layak disayangi, dan kamu pantas mendapatkan kebahagiaan.
+
+Aku tidak tahu semua hal yang akan kita temui ke depannya. Tapi aku berharap kita bisa terus membuat kenangan, belajar bersama, dan merayakan hal-hal kecil.
+
+Happy birthday, Sayang. Semoga tahun ini memelukmu dengan lembut. Aku sayang kamu. 💗
+
+— dari seseorang yang senang sekali bisa menyayangimu.</div>
+      </div>
+    </section>
+
+    <section id="musicSection">
+      <div class="section-head"><div class="eyebrow">chapter three · press play</div><h2>A song for us 🎧</h2><p class="section-desc">Putar lagu yang mengingatkanmu pada dia. Musik tidak otomatis menyala agar nyaman dibuka di HP.</p></div>
+      <div class="card">
+        <div class="music-row"><div class="music-disc">🎵</div><div class="music-copy"><strong>Our little soundtrack</strong><small>Ganti file musik dengan lagu pilihanmu sendiri.</small></div></div>
+        <audio controls preload="none">
+          <source src="assets/musik.mp3" type="audio/mpeg">
+          Browser kamu belum dapat memutar audio ini.
+        </audio>
+        <p class="hint">Taruh file audio bernama <b>musik.mp3</b> di folder assets. Gunakan audio yang kamu punya hak untuk membagikannya.</p>
+      </div>
+    </section>
+
+    <section id="quizSection">
+      <div class="section-head"><div class="eyebrow">chapter four · just for fun</div><h2>How well do you know us? 🫶</h2><p class="section-desc">Kuis kecil untuk Sayang. Kamu bisa mengubah pertanyaan dan jawaban di kode supaya sesuai dengan cerita kalian.</p></div>
+      <div class="card">
+        <div class="progress"><span id="progressBar"></span></div>
+        <div id="quizArea"></div>
+        <div class="feedback" id="quizFeedback" aria-live="polite"></div>
+        <div class="center"><button id="nextQuestion" class="hidden" onclick="nextQuiz()">Lanjut ♡</button></div>
+      </div>
+    </section>
+
+    <section id="finalSection">
+      <div class="card final-card">
+        <div class="eyebrow">the last little surprise</div>
+        <div class="cake">🎂</div>
+        <h2>Make a wish, Sayang!</h2>
+        <p class="section-desc">Tutup mata sebentar, pikirkan satu harapan, lalu tekan tombol di bawah ini.</p>
+        <button onclick="makeWish()">Aku sudah membuat harapan ✨</button>
+        <div id="finalMessage" class="hidden">
+          <p class="final-message">Semoga harapanmu menemukan jalannya. Semoga hari-harimu dipenuhi tawa, hati yang tenang, dan cinta yang membuatmu merasa aman. Selamat ulang tahun, Sekar Primadani Pangesti. 💗</p>
+          <div id="confettiNote" style="font-size:2rem">🌷 💖 🎀 ✨ 🧸</div>
+          <p><b>Kalau aku boleh berharap juga...</b><br>semoga aku masih bisa ikut merayakan banyak ulang tahunmu berikutnya. ♡</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>Dibuat dengan <b>♡</b> khusus untuk Sekar · from your Sayang</footer>
+</main>
+<script>
+const floaties=document.getElementById('floaties');
+function floatHeart(){
+  const el=document.createElement('span');el.className='floaty';
+  el.textContent=['♡','✦','💗','🌸','୨୧'][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*100+'%';el.style.fontSize=(13+Math.random()*19)+'px';
+  el.style.animationDuration=(7+Math.random()*7)+'s';floaties.appendChild(el);
+  setTimeout(()=>el.remove(),15000);
+}
+setInterval(floatHeart,850);
+function openGift(){
+  document.getElementById('giftContent').classList.remove('hidden');
+  document.getElementById('memories').scrollIntoView({behavior:'smooth'});
+  sprinkle(24);
+}
+function showLetter(){
+  document.getElementById('letter').classList.remove('hidden');
+  document.getElementById('letterButton').textContent='Suratnya sudah terbuka ♡';
+  document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'});
+  sprinkle(12);
+}
+// EDIT PERTANYAAN DI BAGIAN INI. "correct" harus sama persis dengan salah satu pilihan.
+const questions=[
+ {q:'Apa panggilan sayang yang dipakai di hadiah ini?',options:['Sayang','Bestie','Kakak','Partner in crime'],correct:'Sayang',why:'Iya, Sayang. Panggilan sederhana yang terasa dekat. ♡'},
+ {q:'Apa yang paling cocok dilakukan setelah membuka hadiah ini?',options:['Menyimpan semua perasaan sendiri','Tersenyum dan menikmati kejutan','Menutup halaman sebelum selesai','Menghapus semua foto'],correct:'Tersenyum dan menikmati kejutan',why:'Betul! Hadiah ini dibuat supaya kamu merasa disayang. 💗'},
+ {q:'Apa harapan utama untuk ulang tahun Sekar?',options:['Selalu harus sempurna','Tidak boleh sedih','Semoga bahagia dan dikelilingi hal baik','Harus memenuhi semua ekspektasi'],correct:'Semoga bahagia dan dikelilingi hal baik',why:'Benar. Semoga banyak hal baik datang kepadamu. 🌷'}
+];
+let qi=0,score=0,answered=false;
+function renderQuiz(){
+  answered=false;
+  const item=questions[qi];
+  document.getElementById('progressBar').style.width=(qi/questions.length*100)+'%';
+  document.getElementById('quizFeedback').textContent='';
+  document.getElementById('nextQuestion').classList.add('hidden');
+  document.getElementById('quizArea').innerHTML=
+    `<p class="quiz-q"><b>Pertanyaan ${qi+1} dari ${questions.length}</b><br>${item.q}</p><div class="answers">${item.options.map((o,i)=>`<button class="answer" data-index="${i}">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>`;
+  document.querySelectorAll('.answer').forEach(btn=>btn.addEventListener('click',()=>chooseAnswer(item,btn)));
+}
+function chooseAnswer(item,btn){
+  if(answered)return;answered=true;
+  const chosen=item.options[Number(btn.dataset.index)];
+  document.querySelectorAll('.answer').forEach(b=>b.disabled=true);
+  if(chosen===item.correct){score++;btn.classList.add('selected');document.getElementById('quizFeedback').textContent=item.why;}
+  else {document.getElementById('quizFeedback').textContent='Jawaban yang benar: '+item.correct+'. '+item.why;}
+  document.getElementById('nextQuestion').classList.remove('hidden');
+  document.getElementById('nextQuestion').textContent=qi===questions.length-1?'Lihat hasil ♡':'Lanjut ♡';
+}
+function nextQuiz(){
+  if(qi<questions.length-1){qi++;renderQuiz();return;}
+  document.getElementById('progressBar').style.width='100%';
+  document.getElementById('quizArea').innerHTML=`<div class="center"><div style="font-size:3rem">💞</div><h2>Kamu menyelesaikan kuis!</h2><p>Skor kamu: ${score} dari ${questions.length}</p><p>Yang paling penting bukan skornya, tapi semoga kamu merasa disayang hari ini.</p><button onclick="qi=0;score=0;renderQuiz()">Main lagi</button></div>`;
+  document.getElementById('quizFeedback').textContent='';
+  document.getElementById('nextQuestion').classList.add('hidden');
+}
+function makeWish(){
+  document.getElementById('finalMessage').classList.remove('hidden');
+  document.getElementById('finalMessage').scrollIntoView({behavior:'smooth',block:'center'});
+  sprinkle(65);
+}
+function sprinkle(n){
+  const symbols=['💗','✨','🌸','♡','🎀'];
+  for(let i=0;i<n;i++){
+    setTimeout(()=>{
+      const s=document.createElement('span');s.className='spark';
+      s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      s.style.left=Math.random()*100+'vw';s.style.bottom='0';
+      s.style.setProperty('--x',(Math.random()*150-75)+'px');
+      s.style.fontSize=(14+Math.random()*18)+'px';
+      document.body.appendChild(s);setTimeout(()=>s.remove(),1900);
+    },i*18);
+  }
+}
+renderQuiz();
+</script>
+</body>
+</html>
